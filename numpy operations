@@ -1,0 +1,256 @@
+1.
+import numpy as np
+a=[[10,20,30],[40,50,60]]
+arr=np.asarray(a,order="F")#converting to array with column prioritize
+for i in np.nditer(arr):
+    print(i)
+
+
+2.
+import numpy as np
+a=b"welcome to python"
+b=np.frombuffer(a,dtype="S1",count=4,offset=3)
+print(b)        #creating array using frombuffer
+
+
+3.
+import numpy as np
+a=[19,20,30,40,50]
+b=np.fromiter(a,dtype=int,count=4)
+print(b)          #creating array using fromiter
+
+
+4.
+import numpy as np
+arr=np.full([3,2],5)   #filling 2-D array with 5 number
+print(arr)
+
+
+5.
+import numpy as np
+arr=np.random.rand(3,3)
+print(arr)
+
+
+6.
+import numpy as np
+arr=np.eye(2,2)
+print(arr)
+
+
+7.
+import numpy as np
+arr=np.arange(1,10)
+print(arr)
+
+
+8.
+import numpy as np
+arr=np.linspace(10,100,10,endpoint=False,retstep=True,dtype=int)
+print(arr)
+
+
+9.
+import numpy as np
+arr=np.linspace(10,100,10,endpoint=True,retstep=False)
+print(arr)
+
+
+10.
+import numpy as np
+arr=np.linspace(10,100,10)
+print(arr)
+
+
+11.
+import numpy as np
+arr=np.logspace(1,10,10,base=2)
+print(arr)
+
+
+12.
+import numpy as np
+arr=np.logspace(1,10,10,base=2,endpoint=True,dtype=int)
+print(arr)
+
+13.
+import numpy as np
+arr1=np.array([[10,20,30],[40,50,60]])
+arr2=np.copy(arr1)
+print(arr2)
+
+
+14.
+import numpy as np
+arr1=np.array([[10,20,30],[40,50,60]])
+arr2=np.copy(arr1)
+print(arr2)
+arr1[1][2]=90
+print(arr1)
+print(arr2)
+
+
+15.
+import numpy as np
+arr1=np.array([[10,20,30],[40,50,60]])
+arr2=arr1.view()
+print(arr2)
+arr1[1][2]=90
+print(arr1)
+print(arr2)
+
+
+16.
+import numpy as np
+arr=np.array([[10,90,30],[40,70,60]])
+arr2=np.sort(arr,axis=0)
+print(arr2)
+
+
+17.
+import numpy as np
+a=np.array([10,20,30,40,50])
+a=np.insert(a,3,[10,29]) #inserting a elements to array
+print(a)
+
+
+18.
+import numpy as np
+a = np.array([10, 20, 30, 40, 50])
+b= np.array([100, 90, 80, 70, 60])
+print(np.append(a,b))
+
+
+19.
+import numpy as np
+a = np.array([[10, 20],[40, 50]])
+b= np.array([[100, 90],[70, 60]])
+print(np.append(a,b))
+
+
+20.
+import numpy as np
+a=np.array([10,20,30,40,50])
+a=np.delete(a,3)
+print(a)
+
+
+21.
+import numpy as np
+a = np.array([[10, 20],[40, 50]])
+b= np.array([[100, 90],[70, 60]])
+print(np.concatenate((a,b)))
+
+
+22.
+import numpy as np
+a = np.array([10, 20,40, 50])
+b= np.array([100, 90,70, 60])
+print(np.concatenate((a,b)))
+
+
+23.
+import numpy as np
+a = np.array([10, 20,40, 50])
+b= np.array([100, 90,70, 60])
+c=np.stack((a,b))
+print("c=",c)
+print("c[0]=",c[0])
+print("c[1]=",c[1])
+
+24.
+import numpy as np
+a = np.array([[10, 20],[40, 50]])
+b= np.array([[100, 90],[70, 60]])
+c=np.stack((a,b),axis=0)
+print("c=",c)
+
+25.
+import numpy as np
+a = np.array([[10, 20],[40, 50]])
+b= np.array([[100, 90],[70, 60]])
+c=np.stack((a,b),axis=1)
+print("c=",c)
+
+
+26.
+import numpy as np
+a = np.array([[10, 20],[40, 50]])
+b= np.array([[100, 90],[70, 60]])
+c=np.stack((a,b),axis=0)
+print("c=",c)
+
+
+27.
+import numpy as np
+a = np.array([[10, 20],[40, 50]])
+b= np.array([[100, 90],[70, 60]])
+c=np.vstack((a,b))
+print("c=",c)
+
+
+28.
+import numpy as np
+a = np.array([[10, 20],[40, 50]])
+b= np.array([[100, 90],[70, 60]])
+c=np.hstack((a,b))
+print("c=",c)
+
+
+29.
+import numpy as np
+a = np.array([[10, 20],[40, 50]])
+b= np.array([[100, 90],[70, 60]])
+c=np.dstack((a,b))
+print("c=",c)
+
+
+30.
+import numpy as np
+x=np.arange(1,100,10)
+c=np.split(x,2)
+d=np.split(x,5)
+print(x)
+print(c)
+print(d)
+s1,s2,s3,s4,s5=np.split(x,5)
+print(s1)
+print(s2)
+print(s3)
+print(s4)
+print(s5)
+
+
+31.
+import numpy as np
+arr=np.array([[1,2,3],[4,5,6],[7,8,9]])
+c=np.where(arr%2==0)
+print(c)
+
+
+32.
+import numpy as np
+arr=np.arange(1,10,1)
+print(arr)
+
+
+33.
+import numpy as np
+arr=np.array([10,20,30,40,50])
+print(np.searchsorted(arr,[40,30]))
+
+
+34.
+import numpy as np
+arr=np.arange(1,10,1)
+arr=np.reshape(arr,(3,3))
+print(np.exp(arr))
+print(np.sqrt(arr))
+
+
+35.
+import numpy as np
+arr1=np.array([[1,2,3],[4,5,6],[7,8,9]])
+arr2=np.array([[10,20,30],[4,5,6],[70,80,90]])
+print(np.array_equal(arr1,arr2))
+print(arr1==arr2)
